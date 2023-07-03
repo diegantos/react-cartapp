@@ -8,15 +8,14 @@ export const CatalogView = ({ handler }) => {
   }, []);
 
   const addProduct = (product) => {
-    console.log(product);
     handler(product)
   };
 
   return (
     <>
       <div className="row">
-        {products.map(({ id, name, description, price, handler }) => (
-          <div key={id} handler={ handler} className="col-4 my-2">
+        {products.map(({ id, name, description, price }) => (
+          <div key={id} className="col-4 my-2">
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">{name}</h5>
