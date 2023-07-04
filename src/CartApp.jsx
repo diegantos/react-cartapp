@@ -2,12 +2,7 @@ import { useState } from "react";
 import { CartView } from "./components/CartView";
 import { CatalogView } from "./components/CatalogView";
 
-const initialCartItems = [
-  // {
-  //     product:{},
-  //     quantity: 0,
-  // }
-];
+const initialCartItems = [];
 
 export const CartApp = () => {
   const [cartItems, setCartItems] = useState(initialCartItems);
