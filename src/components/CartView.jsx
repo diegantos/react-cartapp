@@ -8,6 +8,7 @@ export const CartView = ({ items, handlerDelete }) => {
     setTotal(
       items.reduce((acc, item) => acc + item.product.price * item.quantity, 0)
     )
+    sessionStorage.setItem('cart', JSON.stringify(items))
   },[ items ])
 
   const onDeleteProduct = (id) => {
