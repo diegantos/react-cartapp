@@ -12,8 +12,12 @@ export const itemsReducer = (state = [], action) => {
     case "UpdateQuantityProductCart":
       return state.map((i) => {
         if(i.product.id === action.payload.id){
-            i.quantity = i.quantity + 1
+            return{
+                ...i,
+                quantity: i.quantity + 1,
+            }
         }
+        return i
       });
     case "DeleteProductCart":
       return [
