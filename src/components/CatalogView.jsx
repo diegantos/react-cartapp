@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "../services/productService";
+import { useNavigate } from "react-router-dom";
 
 export const CatalogView = ({ handler }) => {
   const [products, setProducts] = useState([]);
@@ -7,8 +8,11 @@ export const CatalogView = ({ handler }) => {
     setProducts(getProducts());
   }, []);
 
+  const navigate = useNavigate()
+
   const addProduct = (product) => {
     handler(product)
+    navigate('/cart')
   };
 
   return (
