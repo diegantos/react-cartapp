@@ -4,8 +4,14 @@ import { useNavigate } from "react-router-dom";
 
 export const CatalogView = ({ handler }) => {
   const [products, setProducts] = useState([]);
+
+  const findAll = async() => {
+    const prods = await getProducts()
+    setProducts(prods);
+  }
+
   useEffect(() => {
-    setProducts(getProducts());
+    findAll()
   }, []);
 
   const navigate = useNavigate()
